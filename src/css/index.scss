@@ -1,6 +1,22 @@
 @use "test";
 @use "menu";
+@use "root";
+// @import url("../fonts/Cigra.woff");
 
+// @font-face {
+//   font-family: "CustomFont";
+//   src: url("CustomFont.eot");
+//   src: url("CustomFont.woff") format("woff"),
+
+// @font-face {
+//   font-family: "cigra";
+//   src: url("../fonts/Cigra.woff") format("woff");
+// }
+
+// .t {
+//   font-family: "cigra", serif;
+//   font-size: 30px;
+// }
 .diver {
   border: 1px solid black;
 }
@@ -11,22 +27,20 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
   --color-e-y: #d5c071;
   --color-e-b: #7c9d96;
   --color-e-g: #233c1e;
   --color-e-r: #e8b7a8;
   --color-e-p: #bc5c46;
+  --font-header: "cigra";
 }
 
 * {
@@ -177,4 +191,8 @@ button:focus-visible {
 }
 #portcard-3 {
   background-color: var(--color-e-r);
+}
+
+.disp--grid-right {
+  background-color: var(--color-e-p);
 }

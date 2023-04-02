@@ -6,7 +6,7 @@ const menuShop = document.getElementById("menu--shop");
 const menuContact = document.getElementById("menu--contact");
 
 const changeChannel = (channel) => {
-  console.log(channel + "channel called");
+  console.log(channel.id + "channel called");
 };
 
 const clicker = (e) => {
