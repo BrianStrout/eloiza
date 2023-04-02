@@ -13,6 +13,8 @@
   display: flex;
   justify-content: center;
   gap: 32px;
+  padding-bottom: 10vh;
+  overflow-y: hidden;
 }
 
 .menu--item {
@@ -27,6 +29,11 @@
   text-shadow: 0.5px 0.5px rgb(0, 0, 0);
   font-family: var(--font-header);
   font-size: 1.75rem;
+  transform: translateY(-50vh);
+  transition: transform 0.75s cubic-bezier(0.79, 0.15, 0.12, 1.42);
+  &.drop--in {
+    transform: translateY(0vh);
+  }
 }
 
 .navigation--shell {
@@ -36,11 +43,89 @@
   z-index: 50;
   width: 150px;
   height: 150px;
-  background-color: pink;
+  // background-color: pink;
 }
 .nav--frame {
+  width: 100%;
+  height: 100%;
+  // background-color: brown;
 }
-.key {
+.hand {
+  width: 50%;
+  height: 50%;
+  transform: rotatez(45deg);
+
+  &:hover {
+    .key {
+      transform: rotateX(360deg);
+      transition: all 1s;
+      // opacity: 0.1;
+      // transform: matrix(1, 0, -0, 1, 0, 0);
+      // transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+      // transform: rotate3d(0, 1, 0, 10deg);
+    }
+  }
+
+  .key {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../images/key.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    transition: all 2s;
+    // transform-origin: top left;
+
+    // transform: skew(10deg, 10deg);
+
+    &.opening {
+      animation: keySpin 2.5s ease-in-out 0s 1 forwards;
+    }
+  }
 }
+
+// matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
 .keyway {
+}
+
+@keyframes keySpin {
+  0% {
+    transform: translate(0px, 0px) rotateX(0deg);
+  }
+  30% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  40% {
+    transform: translate(80px, 0px) rotateX(45deg);
+  }
+  55% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  50% {
+    transform: translate(80px, 0px) rotateX(-45deg);
+  }
+  65% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  60% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  65% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  70% {
+    transform: translate(80px, 0px) rotateX(-45deg);
+  }
+  75% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  80% {
+    transform: translate(80px, 0px) rotateX(90deg);
+  }
+  100% {
+    // opacity: 0;
+    transform: translate(80px, 0px) rotateX(90deg);
+  }
 }

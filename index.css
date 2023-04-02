@@ -13,6 +13,8 @@
   display: flex;
   justify-content: center;
   gap: 32px;
+  padding-bottom: 10vh;
+  overflow-y: hidden;
 }
 
 .menu--item {
@@ -27,6 +29,11 @@
   text-shadow: 0.5px 0.5px rgb(0, 0, 0);
   font-family: var(--font-header);
   font-size: 1.75rem;
+  transform: translateY(-50vh);
+  transition: transform 0.75s cubic-bezier(0.79, 0.15, 0.12, 1.42);
+}
+.menu--item.drop--in {
+  transform: translateY(0vh);
 }
 
 .navigation--shell {
@@ -36,9 +43,74 @@
   z-index: 50;
   width: 150px;
   height: 150px;
-  background-color: pink;
 }
 
+.nav--frame {
+  width: 100%;
+  height: 100%;
+}
+
+.hand {
+  width: 50%;
+  height: 50%;
+  transform: rotatez(45deg);
+}
+.hand:hover .key {
+  transform: rotateX(360deg);
+  transition: all 1s;
+}
+.hand .key {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/key.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  transition: all 2s;
+}
+.hand .key.opening {
+  animation: keySpin 2.5s ease-in-out 0s 1 forwards;
+}
+
+@keyframes keySpin {
+  0% {
+    transform: translate(0px, 0px) rotateX(0deg);
+  }
+  30% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  40% {
+    transform: translate(80px, 0px) rotateX(45deg);
+  }
+  55% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  50% {
+    transform: translate(80px, 0px) rotateX(-45deg);
+  }
+  65% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  60% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  65% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  70% {
+    transform: translate(80px, 0px) rotateX(-45deg);
+  }
+  75% {
+    transform: translate(80px, 0px) rotateX(0deg);
+  }
+  80% {
+    transform: translate(80px, 0px) rotateX(90deg);
+  }
+  100% {
+    transform: translate(80px, 0px) rotateX(90deg);
+  }
+}
 .diver {
   border: 1px solid black;
 }
@@ -173,7 +245,7 @@ button:focus-visible {
 /* update for mobile */
 .display--grid-case {
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border: 5px solid var(--color-e-g);
@@ -188,6 +260,7 @@ button:focus-visible {
 }
 
 .portal--shell {
+  position: relative;
   width: 70%;
   height: 80%;
   display: flex;
@@ -196,32 +269,33 @@ button:focus-visible {
   align-items: center;
   /* background-color: var(--color-e-b); */
   /* border: 5px solid pink; */
+  overflow-y: hidden;
 }
 
 .portal--frame {
+  position: absolute;
+  z-index: 10;
   width: 100%;
   height: 100%;
   background-image: url("./src/el_placehold_portal.png");
-  background-size: cover;
+  background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .portal--card {
-  width: 100px;
-  height: 100px;
-}
-
-#portcard-1 {
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  border: 5px solid var(--color-e-g);
   background-color: var(--color-e-b);
+  transition: top 1.5s cubic-bezier(0.11, 0.69, 0, 1);
 }
 
-#portcard-2 {
-  background-color: var(--color-e-g);
-}
-
-#portcard-3 {
-  background-color: var(--color-e-r);
+.card--shown {
+  top: 0%;
 }
 
 .disp--grid-right {

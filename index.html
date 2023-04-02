@@ -11,7 +11,9 @@
       <div class="site--padding">
         <div class="navigation--shell">
           <div class="nav--frame">
-            <div class="key"></div>
+            <div id="hand" class="hand">
+              <div id="key" class="key"></div>
+            </div>
             <div class="keyway"></div>
           </div>
         </div>
@@ -19,7 +21,7 @@
           <div class="menu--container">
             <div id="menu--tattoo" class="menu--item">Tattoos</div>
             <div id="menu--painting" class="menu--item">Paintings</div>
-            <div id="menu--mural" class="menu--item">Murals</div>
+            <!-- <div id="menu--mural" class="menu--item">Murals</div> -->
             <div id="menu--music" class="menu--item">Music</div>
             <div id="menu--shop" class="menu--item">Merch</div>
             <div id="menu--contact" class="menu--item">Contact</div>
@@ -29,11 +31,14 @@
         <div class="display--grid-case">
           <div class="disp--grid-left">
             <div class="portal--shell">
-              <div class="portal--frame">
-                <div id="portcard-1" class="portal--card"></div>
-                <div id="portcard-2" class="portal--card"></div>
-                <div id="portcard-3" class="portal--card"></div>
+              <div class="portal--frame"></div>
+              <div id="menu--tattoo-card" class="portal--card card--shown">
+                tattoo
               </div>
+              <div id="menu--painting-card" class="portal--card">painting</div>
+              <div id="menu--music-card" class="portal--card">music</div>
+              <div id="menu--shop-card" class="portal--card">shop</div>
+              <div id="menu--contact-card" class="portal--card">contact</div>
             </div>
           </div>
           <div class="disp--grid-right">face</div>
