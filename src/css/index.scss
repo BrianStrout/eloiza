@@ -1,3 +1,10 @@
+@use "test";
+@use "menu";
+
+.diver {
+  border: 1px solid black;
+}
+
 /* import classes from './' */
 
 :root {
@@ -111,11 +118,13 @@ button:focus-visible {
 }
 
 .site--shell {
+  position: relative;
   width: 100%;
   height: 100vh;
   background-color: var(--color-e-y);
 }
 .site--padding {
+  position: relative;
   width: 100%;
   height: 100vh;
   padding: 5% 20% 0% 20%;
