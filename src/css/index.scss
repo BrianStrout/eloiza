@@ -1,18 +1,17 @@
 @use "test";
 @use "menu";
 @use "root";
-// @import url("../fonts/Cigra.woff");
+@use "portal_elements";
 
+// @import url("../fonts/Cigra.woff");
 // @font-face {
 //   font-family: "CustomFont";
 //   src: url("CustomFont.eot");
 //   src: url("CustomFont.woff") format("woff"),
-
 // @font-face {
 //   font-family: "cigra";
 //   src: url("../fonts/Cigra.woff") format("woff");
 // }
-
 // .t {
 //   font-family: "cigra", serif;
 //   font-size: 30px;
@@ -159,43 +158,7 @@ button:focus-visible {
   align-items: center;
   /* background-color: blue; */
 }
-.portal--shell {
-  position: relative;
-  width: 70%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* background-color: var(--color-e-b); */
-  /* border: 5px solid pink; */
-  overflow-y: hidden;
-}
 
-.portal--frame {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  background-image: url("./src/el_placehold_portal.png");
-  background-size: 120%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.portal--card {
-  position: absolute;
-  z-index: 5;
-  top: 100%;
-  width: 100%;
-  height: 100%;
-  border: 5px solid var(--color-e-g);
-  background-color: var(--color-e-b);
-  transition: top 1.5s cubic-bezier(0.11, 0.69, 0, 1);
-}
-.card--shown {
-  top: 0%;
-}
 // #portcard-1 {
 //   background-color: var(--color-e-b);
 // }

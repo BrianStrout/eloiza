@@ -1,0 +1,96 @@
+.portal--shell {
+  position: relative;
+  width: 70%;
+  height: 80%;
+  // 80% of 80vh
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.portal--frame {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-image: url("./src/el_placehold_portal.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+.the--shade {
+  display: none;
+  // display: inline;
+  position: absolute;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.437);
+}
+.the--stars-above {
+  position: absolute;
+  top: 0;
+  z-index: 6;
+  width: 128vh;
+  height: 128vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../..//public/images/ph-galaxy.png");
+  // transform: rotate(0deg);
+  // transition: all 2s ease-in-out;
+  &:hover {
+    animation: turnTheStars 3s linear 0s 1 forwards;
+    // opacity: 0.1;
+  }
+}
+
+@keyframes turnTheStars {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  // 40% { transform: rotate(deg);
+  // }
+  // 50% { transform: rotate(deg);
+  // }
+  // 60% { transform: rotate(deg);
+  // }
+  // 70% { transform: rotate(deg);
+  // }
+  // 80% { transform: rotate(deg);
+  // }
+  60% {
+    transform: rotate(900deg);
+  }
+  90% {
+    transform: rotate(1060deg);
+  }
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+
+.portal--card {
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  border: 5px solid var(--color-e-g);
+  background-color: var(--color-e-b);
+  transition: top 1.5s cubic-bezier(0.11, 0.69, 0, 1);
+}
+.card--shown {
+  top: 0%;
+}
