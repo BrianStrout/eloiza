@@ -1,8 +1,8 @@
 import "./index.css";
-import javascriptLogo from "./javascript.svg";
-import viteLogo from "/vite.svg";
-import { setupCounter } from "./counter.js";
+
+// import { setupCounter } from "./counter.js";
 import clicker from "./src/modules/clicker";
+import blooming from "./src/modules/bloomOnPortal";
 
 // document.querySelector('#app').innerHTML = `
 //   <div>
@@ -21,9 +21,21 @@ import clicker from "./src/modules/clicker";
 //     </p>
 //   </div>
 // `
+// let num = 10;
+// let reverse = true;
+// if (!reverse) {
+//   for (let i = num - 1; i >= 0; i--) {
+//     console.log(i);
+//   }
+// } else {
+//   for (let i = 0; i < num; i++) {
+//     console.log(i);
+//   }
+// }
 
 document.addEventListener("click", (e) => {
+  // blooming();
   clicker(e);
 });
 
-setupCounter(document.querySelector("#counter"));
+// setupCounter(document.querySelector("#counter"));

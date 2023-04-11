@@ -140,19 +140,56 @@
   z-index: 11;
   height: 50%;
   width: 30%;
-  border: 5px solid aqua;
 }
 
 .vine--left {
   left: 0;
 }
 
-.lstem-stage {
+.stem {
   position: absolute;
   height: 100%;
   width: 100%;
-  top: 90%;
-  background-color: red;
+  top: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.stem.trans {
+  background-color: transparent;
+}
+
+.lstem-stage:nth-child(2) {
+  background-image: url("public/images/blooming/elphvine1.png");
+}
+
+.lstem-stage:nth-child(3) {
+  background-image: url("public/images/blooming/elphvine2.png");
+}
+
+.lstem-stage:nth-child(4) {
+  background-image: url("public/images/blooming/elphvine3.png");
+}
+
+.lstem-stage:nth-child(5) {
+  background-image: url("public/images/blooming/elphvine4.png");
+}
+
+.rstem-stage:nth-child(2) {
+  background-image: url("public/images/blooming/elphvine1.png");
+}
+
+.rstem-stage:nth-child(3) {
+  background-image: url("public/images/blooming/elphvine2.png");
+}
+
+.rstem-stage:nth-child(4) {
+  background-image: url("public/images/blooming/elphvine3.png");
+}
+
+.rstem-stage:nth-child(5) {
+  background-image: url("public/images/blooming/elphvine4.png");
 }
 
 .vine--right {
@@ -420,4 +457,9 @@ button:focus-visible {
 
 .disp--grid-right {
   background-color: var(--color-e-p);
+}
+
+.scattered {
+  opacity: 0;
+  display: none;
 }/*# sourceMappingURL=index.css.map */

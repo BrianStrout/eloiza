@@ -1,40 +1,63 @@
-let currentPos = 0;
-let images = [f1, f2, f1, f6, f3, f4, f3, f4, f1, f3, f4, f3, f6, f1, f2];
-let images2 = [b1, b2, b3, b2];
-let lifeCycle = [0, 1, , 2, 3];
+const lefties = Array.from(document.querySelectorAll(".lstem-stage"));
+const righties = Array.from(document.querySelectorAll(".rstem-stage"));
+console.log(lefties);
+const timing = 125;
+let countUp = true;
 
-function blooming() {
-  // if (++currentPos >= images.length) currentPos = 0;
-  if (++currentPos >= images.length) {
-    return;
-  } else {
-    console.log(currentPos);
+function dying() {
+  console.log("time to die");
+  for (let j = lefties.length - 2; j >= 0; j--) {
+    let descent = lefties.length - j;
+    let delay = descent * timing;
+    setTimeout(() => {
+      lefties.forEach((stem, index) => {
+        stem.style.opacity = "0";
+        if (index === j) {
+          stem.style.opacity = "1";
+        }
+      });
+    }, delay);
+    setTimeout(() => {
+      righties.forEach((stem, index) => {
+        stem.style.opacity = "0";
+        if (index === j) {
+          stem.style.opacity = "1";
+        }
+      });
+    }, delay);
   }
-
-  //   image.src = images[currentPos];
 }
 
-setInterval(volgendefoto, 200);
+function blooming() {
+  console.log("blooming");
+  for (let i = 0; i < lefties.length; i++) {
+    let delay = i * timing;
+    setTimeout(() => {
+      lefties.forEach((stem, index) => {
+        stem.style.opacity = "0";
+        if (index === i) {
+          stem.style.opacity = "1";
+        }
+      });
+    }, delay);
+    setTimeout(() => {
+      righties.forEach((stem, index) => {
+        stem.style.opacity = "0";
+        if (index === i) {
+          stem.style.opacity = "1";
+        }
+      });
+    }, delay);
 
-export default currentPos;
-
-$(function () {
-  var increment = 1;
-  var seconds = increment;
-  var countUp = true;
-  var timerId = setInterval(function () {
-    $("#counter").text(seconds);
-
-    if (countUp) {
-      seconds += increment;
-    } else {
-      seconds -= increment;
-    }
-
-    if (countUp && seconds > increment * 4) {
+    if (i === lefties.length - 1) {
       countUp = false;
-    } else if (!countUp && seconds <= increment) {
-      countUp = true;
+      setTimeout(() => {
+        console.log("count up no more");
+        dying();
+        i = 0;
+      }, delay);
     }
-  }, 500);
-});
+  }
+}
+
+export default blooming;
